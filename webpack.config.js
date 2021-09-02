@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
    entry: './source/main.js',
    resolve: {
-    extensions: ['.js', '.jsx','.scss']
+    extensions: ['.js', '.jsx','.scss','.css']
 },
    output: {
       path: path.join(__dirname, '/bundle'),
@@ -31,7 +31,10 @@ module.exports = {
                 "css-loader", // 2. Turns css into commonjs
                 "sass-loader", // 1. Turns sass into css
             ],
-        }
+        },   {
+         test: /\.css$/i,
+         use: ["style-loader", "css-loader"],
+       }
       ]
    },
    plugins:[

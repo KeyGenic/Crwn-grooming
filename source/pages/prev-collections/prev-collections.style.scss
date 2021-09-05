@@ -1,0 +1,15 @@
+.prev-collections {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  
+    .title {
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+  
+    .prev {
+      display: flex;
+      justify-content: space-between;
+    }
+  }

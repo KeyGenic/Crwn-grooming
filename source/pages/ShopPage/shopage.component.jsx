@@ -1,5 +1,6 @@
 import React from 'react';
 import shopData from './shopData';
+import PrevCollection from '../prev-collections/prev-collections.component';
 
  class ShopPage extends React.Component{
     constructor(props){
@@ -11,10 +12,21 @@ import shopData from './shopData';
     }
 
     render(){
-        const {collections}= this.state
+        const {collections} = this.state;
         return(
-            <div>yooo</div>
+            <div className ="collections-container">
+                <h1 style = {{
+                    fontSize : `50px`
+                }}>Collections</h1>
+             {collections.map(({id,...collections}) => {
+                return(
+                    <PrevCollection key = {id} {...collections} />
+                )
+            })}
+            </div>
+            
         )
+        
     }
 }
 

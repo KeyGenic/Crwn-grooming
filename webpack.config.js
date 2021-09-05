@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
    entry: './source/main.js',
    resolve: {
-    extensions: ['.js', '.jsx','.scss','.css']
+    extensions: ['.js', '.jsx','.scss','.css',]
 },
    output: {
       path: path.join(__dirname, '/bundle'),
@@ -35,6 +35,28 @@ module.exports = {
         },   {
          test: /\.css$/i,
          use: ["style-loader", "css-loader"],
+       },
+       {
+         test: /\.(png|jpg|gif)$/i,
+         use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 8192,
+              },
+            },
+          ]
+       },
+       {
+         test: /\.svg$/,
+         use: [
+           {
+             loader: 'svg-url-loader',
+             options: {
+               limit: 10000,
+             },
+           },
+         ]
        }
       ]
    },

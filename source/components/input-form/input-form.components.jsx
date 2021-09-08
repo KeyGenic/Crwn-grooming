@@ -17,5 +17,5 @@ const InputForm = ({handleChange,label,...other}) => {
         </div>
     )
 }
-
 export default InputForm
+

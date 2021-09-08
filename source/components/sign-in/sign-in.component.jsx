@@ -1,7 +1,7 @@
 import React from 'react';
 import '../sign-in/sign-in-styles.scss';
+import CustomBtn from '../custom-btn/custom-btn.components';
 import InputForm from '../input-form/input-form.components';
-import {CustomBtn} from '../custom-btn/custom-btn.components';
 import {signInWithGoogle} from '../../firebase/firebase.utils'
 
 class SignIn extends React.Component{
@@ -24,7 +24,9 @@ class SignIn extends React.Component{
         this.setState({[name]:value})
     }
 
+
     render(){
+        console.log(this.state)
         return(
             <div className ="sign-in">
                 <h2>I Already have an Account</h2>

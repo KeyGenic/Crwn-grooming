@@ -2,7 +2,7 @@ import React from 'react';
 import '../sign-in/sign-in-styles.scss';
 import CustomBtn from '../custom-btn/custom-btn.components';
 import InputForm from '../input-form/input-form.components';
-import {signInWithGoogle} from '../../firebase/firebase.utils'
+import {auth,signInWithGoogle} from '../../firebase/firebase.utils'
 
 class SignIn extends React.Component{
     constructor(props){
@@ -14,9 +14,17 @@ class SignIn extends React.Component{
         }
     }
 
-     handleSubmit = (e) => {
+     handleSubmit = async (e) => {
         e.preventDefault()
+
+        const {email,password} = this.state;
+
+        try{
+        await auth.signInWithEmailAndPassword(email,password)
         this.setState({email: '',password:''})
+        }catch(error){
+            console.log(error)
+        }
     }
 
     handleChange = (e) => {
@@ -37,7 +45,7 @@ class SignIn extends React.Component{
                     <InputForm type="password" name = 'password' value ={this.state.password} required handleChange ={this.handleChange} label = 'password' />
                     <div className ="btns">
                     <CustomBtn type="submit" value ="submit form" child ="Sign-in" />
-                    <CustomBtn onClick = {signInWithGoogle} child ="Sign-in with google" isGoogleIn />
+                    <CustomBtn type = "button" onClick = {signInWithGoogle} child ="Sign-in with google" isGoogleIn />
                     </div>
                 </form>
             </div>

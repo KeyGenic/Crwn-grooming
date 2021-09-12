@@ -7,9 +7,9 @@ const PrevCollection = ({title,items}) => {
         <div className = "prev-collections">
             <h1 className = "title">{title}</h1>
             <div className = "prev">
-                {items.filter((items,index) => index<4).map(({id,...prev}) => {
+                {items.filter((items,index) => index<4).map((items) => {
                     return (
-                        <CollectionItems key = {items.id} {...prev} />
+                        <CollectionItems key = {items.id} items = {items} />
                     )
                 })}
             </div>

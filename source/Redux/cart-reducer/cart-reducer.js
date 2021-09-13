@@ -1,4 +1,5 @@
-import hiddenCartType from "./cart-types"
+import hiddenCartType from "./cart-types";
+import { addItemsQuantity } from "./cart.utils";
 
 const INT_STATE = {
     hidden:true,
@@ -14,7 +15,7 @@ const cartReducer = (state = INT_STATE,action) => {
     } else if(action.type === hiddenCartType.ADD_CART){
         return{
             ...state,
-            cartItems:[state.cartItems,action.payload]
+            cartItems:addItemsQuantity(state.cartItems,action.payload)
         }
     }
     

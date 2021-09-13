@@ -4,11 +4,11 @@ import './cart-icon.styles.scss'
 import toggleCartHidden from '../../Redux/cart-reducer/cart.actions';
 import { connect } from 'react-redux';
 
-const CartIconShop = ({toggleCart}) => {
+const CartIconShop = ({toggleCart,itemCount}) => {
     return(
         <div className = "shop-icon-container" onClick ={toggleCart}>
             <img src={CartLogo} alt="" className ="shop-icon" />
-            <span className ="item-count">0</span>
+            <span className ="item-count">{itemCount}</span>
         </div>
     )
 }
@@ -19,4 +19,8 @@ const mapDispatchToProps = (dispatch) => (
     }
 )
 
-export default connect(null,mapDispatchToProps)(CartIconShop)
+const mapProps = ({cart:{cartItems}}) => ({
+    itemCount:cartItems.reduce((accQuantity,cartItem) => accQuantity + cartItem.quantity, 0)
+})
+
+export default connect(mapProps,mapDispatchToProps)(CartIconShop)

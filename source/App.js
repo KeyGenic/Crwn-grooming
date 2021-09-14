@@ -1,6 +1,7 @@
 import React, { Component, useRef } from 'react';
 import HomePage from './pages/homepage/homepage.component';
 import Shampoos from './pages/ShamPoos Page/shampoos.component';
+import checkoutPage from './pages/checkout/checkout.component';
 import ShopPage from './pages/ShopPage/shopage.component';
 import Header from './pages/header/header.component';
 import SignInAndSignUp from './pages/sign-in&sign-up.components.jsx/sign-in&sign-up.components';
@@ -41,6 +42,7 @@ class App extends Component{
             <Switch>
                <Route exact path = "/" component = {HomePage} />
                <Route path = "/shop" component = {ShopPage} />
+               <Route exact path = "/checkout" component = {checkoutPage} />
                <Route exact path = "/signin" render = {() => {
                   return this.props.currentUser ?
                   <Redirect to = "/" /> : <SignInAndSignUp />

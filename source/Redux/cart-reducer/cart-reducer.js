@@ -1,5 +1,5 @@
 import hiddenCartType from "./cart-types";
-import { addItemsQuantity } from "./cart.utils";
+import { addItemsQuantity, decreaseItemRemove } from "./cart.utils";
 
 const INT_STATE = {
     hidden:true,
@@ -16,6 +16,16 @@ const cartReducer = (state = INT_STATE,action) => {
         return{
             ...state,
             cartItems:addItemsQuantity(state.cartItems,action.payload)
+        }
+    } else if(action.type === hiddenCartType.REMOVE_CART){
+        return{
+            ...state,
+            cartItems:state.cartItems.filter((items) => items.id !== action.payload.id)
+        }
+    }else if( action.type === hiddenCartType.DECREASE_ITEM){
+        return{
+            ...state,
+            cartItems:decreaseItemRemove(state.cartItems,action.payload)
         }
     }
     

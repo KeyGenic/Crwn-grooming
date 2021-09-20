@@ -1,5 +1,5 @@
-const shopData = [
-    {
+const shopData = {
+   shampoos: {
         title: 'Shampoos',
         id:1,
         routeName : 'shampoos',
@@ -61,7 +61,7 @@ const shopData = [
         ]
     },
     
-    {
+    showelGel:{
         title: 'Shower-Gels',
         id:2,
         routeName : 'ShowerGels',
@@ -116,7 +116,7 @@ const shopData = [
             }
         ]
     },
-    {
+    DEAODORANT:{
         title: 'DEAODORANTS',
         id:3,
         routeName : 'DEAODORANTS',
@@ -165,7 +165,7 @@ const shopData = [
             }
         ]
     },
-    {
+    bodyPowders : {
         title: 'BODY POWDERS',
         id:4,
         routeName : 'Body Powders',
@@ -208,7 +208,7 @@ const shopData = [
             }
         ]
     },
-    {
+    faceScrubs:{
         title: 'FACE SCRUBS',
         id:5,
         routeName : 'Face Scrubs',
@@ -245,7 +245,7 @@ const shopData = [
             },
         ]
     },
-    {
+    barSoap:{
         title: 'BAR SOAPS',
         id:6,
         routeName : 'Bar Soaps',
@@ -276,6 +276,6 @@ const shopData = [
             }
         ]
     }
-]
+}
 
 export default shopData

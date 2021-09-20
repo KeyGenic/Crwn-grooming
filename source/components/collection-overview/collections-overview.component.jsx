@@ -6,14 +6,15 @@ import { getShopData } from '../../Redux/shop-reducer/shop-selector';
 import { createStructuredSelector } from 'reselect';
 
 const CollectionsOverview = ({collections}) => {
-        return(
+   console.log(collections)
+         return(
             <div className ="collections-container">
                 <h1 style = {{
                     fontSize : `50px`
                 }}>Collections</h1>
-             {collections.map(({id,...collections}) => {
+             {collections.map(({id,...Othercollections}) => {
                 return(
-                    <PrevCollection key = {id} {...collections} />
+                    <PrevCollection key = {id} {...Othercollections} />
                 )
             })}
             </div>

@@ -8,9 +8,9 @@ import { getMainData } from '../../Redux/main-reducer/main-selector';
     const Main = ({sections}) => {
         return(
             <div className ="menu">
-                {sections.map(({id,...sections}) => {
+                {sections.map(({id,...Othersections}) => {
                     return(
-                     <MenULists key = {id} {...sections} />
+                     <MenULists key = {id} {...Othersections} />
                     )
                 })}
                 </div>

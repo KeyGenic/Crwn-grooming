@@ -61,10 +61,10 @@ const shopData = {
         ]
     },
     
-    showelGel:{
-        title: 'Shower-Gels',
+    ShowerGels:{
+        title: 'ShowerGels',
         id:2,
-        routeName : 'ShowerGels',
+        routeName : 'showergels',
         items:[
             {
                 id:10,
@@ -116,7 +116,7 @@ const shopData = {
             }
         ]
     },
-    DEAODORANT:{
+    DEAODORANTS:{
         title: 'DEAODORANTS',
         id:3,
         routeName : 'DEAODORANTS',
@@ -165,10 +165,10 @@ const shopData = {
             }
         ]
     },
-    bodyPowders : {
-        title: 'BODY POWDERS',
+    BodyPowders : {
+        title: 'BodyPowders',
         id:4,
-        routeName : 'Body Powders',
+        routeName : 'bodypowders',
         items: [
             {
                 id:25,
@@ -208,10 +208,10 @@ const shopData = {
             }
         ]
     },
-    faceScrubs:{
-        title: 'FACE SCRUBS',
+    FaceScrubs:{
+        title: 'FaceScrubs',
         id:5,
-        routeName : 'Face Scrubs',
+        routeName : 'facescrubs',
         items:[
             {
                 id:31,
@@ -245,10 +245,10 @@ const shopData = {
             },
         ]
     },
-    barSoap:{
-        title: 'BAR SOAPS',
+    BarSoaps:{
+        title: 'BarSoaps',
         id:6,
-        routeName : 'Bar Soaps',
+        routeName : 'barsoaps',
         items: [
             {
                 id:36,

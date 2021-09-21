@@ -2,17 +2,18 @@ import React from 'react';
 import PrevCollection from '../../pages/prev-collections/prev-collections.component'
 import './collections-overview.styles.scss'
 import { connect } from 'react-redux';
-import { getShopData } from '../../Redux/shop-reducer/shop-selector';
 import { createStructuredSelector } from 'reselect';
+import { getCollectionOverview } from '../../Redux/shop-reducer/shop-selector';
 
 const CollectionsOverview = ({collections}) => {
-   console.log(collections)
+    console.log(collections)
          return(
             <div className ="collections-container">
                 <h1 style = {{
                     fontSize : `50px`
                 }}>Collections</h1>
-             {collections.map(({id,...Othercollections}) => {
+             {collections.map(({id,title,...Othercollections}) => {
+                 console.log(title)
                 return(
                     <PrevCollection key = {id} {...Othercollections} />
                 )
@@ -23,7 +24,7 @@ const CollectionsOverview = ({collections}) => {
 }
 
 const mapStateProps = createStructuredSelector({
-    collections : getShopData
+    collections : getCollectionOverview
 })
         
 

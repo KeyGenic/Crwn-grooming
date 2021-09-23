@@ -1,6 +1,5 @@
 import React from 'react';
 import './header.style.scss';
-import { Link } from 'react-router-dom';
 import Logo from '../../Assets/4.3 crown.svg'
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
@@ -9,34 +8,35 @@ import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component
 import { createStructuredSelector } from 'reselect';
 import { getCurrentUser } from '../../Redux/user-reducer/users.selectors';
 import { getCartHidden } from '../../Redux/cart-reducer/cart.selector';
+import { HeaderContainer,LogoContainer,NavContainer,NavItems } from './header.styles';
 
 const Header = ({currentUser,hidden}) => {
     return (
-        <header>
-            <Link to ="/" className= "logo-container">
+        <HeaderContainer>
+            <LogoContainer to ="/">
                 <img src={Logo} alt="" />
-            </Link>
+            </LogoContainer>
 
-            <div className ="nav">
-                <Link className ="nav-item" to ='/shop'>
+            <NavContainer >
+                <NavItems to ='/shop'>
                     Shop
-                </Link>
-                <Link className ="nav-item" to ='/contact'>
+                </NavItems>
+                <NavItems to ='/contact'>
                     Contact
-                </Link>
+                </NavItems>
                 {currentUser?
-                <div className ="nav-item" onClick = {() => {auth.signOut()}} style = {{cursor :`pointer`}}> Sign-out</div>    
+                <NavItems as = 'div' onClick = {() => {auth.signOut()}}> Sign-out</NavItems>    
                 :
-                <Link className ="nav-item" to ='/signin'>
+                <NavItems to ='/signin'>
                     Sign-in
-                </Link>
+                </NavItems>
             }
             <CartIconShop />
-            </div>
+            </NavContainer>
             {
                 hidden? null : <CartDropdown />
             }
-        </header>
+        </HeaderContainer>
     )
 }
 

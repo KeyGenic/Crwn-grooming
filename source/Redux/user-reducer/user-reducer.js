@@ -6,7 +6,7 @@ const intState = {
 }
 
 const userReducer = (state = intState,action) => {
-    if(action.type == userType.SET_CURRENT_USER ) {
+    if(action.type === userType.SET_CURRENT_USER ) {
         return {
             ...state,
             currentUser:action.payload

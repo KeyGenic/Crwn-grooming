@@ -1,5 +1,4 @@
 import React from 'react';
-import './header.style.scss';
 import Logo from '../../Assets/4.3 crown.svg'
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';

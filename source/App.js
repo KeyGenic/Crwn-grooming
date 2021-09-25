@@ -6,8 +6,11 @@ import Header from './pages/header/header.component';
 import SignInAndSignUp from './pages/sign-in&sign-up.components.jsx/sign-in&sign-up.components';
 import { auth,userProfileDoc } from './firebase/firebase.utils';
 import { setCurrentUser } from './Redux/user-reducer/user.action';
+import { getCollectionOverview } from './Redux/shop-reducer/shop-selector';
 import { connect } from 'react-redux';
 import {Switch,Route,Redirect} from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
+import { getCurrentUser } from './Redux/user-reducer/users.selectors';
 
 class App extends Component{
    unsubscribeFromAuth = null
@@ -52,8 +55,8 @@ class App extends Component{
    }
 }
 
-const statsToProps = ({user}) => ({
-   currentUser:user.currentUser
+const statsToProps = createStructuredSelector({
+   setCurrentUser : getCurrentUser
 })
 
 const setDispacthc = (dispatch) => ({

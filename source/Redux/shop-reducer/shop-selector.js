@@ -10,7 +10,7 @@ export const getShopData = createSelector(
 
 export const getCollectionOverview = createSelector(
     getShopData,
-    collections => Object.keys(collections).map(key => collections[key])
+    collections => collections?Object.keys(collections).map(key => collections[key]):[]
 )
 
 export const getCollectionsId = urlParam => createSelector(

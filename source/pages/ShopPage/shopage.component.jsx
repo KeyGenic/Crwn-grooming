@@ -5,8 +5,16 @@ import CollectionsPage from '../category/collections';
 import { fireStore,convertCollectionSnapshotToMap } from '../../firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { shopAction } from '../../Redux/shop-reducer/shop.action';
+import SpinnerTing from '../../components/with-spinner/spinner-components';
+
+const CollectionOverViewSpinner = SpinnerTing(CollectionsOverview);
+const CollectionPageOverView = SpinnerTing(CollectionsPage)
 
 class ShopPage extends React.Component{
+
+    state = {
+        loading : true
+    }
 
     Unsubscribe = null;
 
@@ -16,15 +24,17 @@ class ShopPage extends React.Component{
         collectionRef.onSnapshot(async snapshot => {
             const collMap = convertCollectionSnapshotToMap(snapshot)
             collectionMap(collMap)
+            this.setState({loading:false})
         })
     }
 
     render(){
         const {match} = this.props
+        const {loading} = this.state
     return(
         <div className ="collections-container">
-           <Route exact path = {`${match.path}`} component = {CollectionsOverview} />
-           <Route path = {`${match.path}/:collectionsId`} component = {CollectionsPage} />
+           <Route exact path = {`${match.path}`} render ={ props => <CollectionOverViewSpinner isLoading = {loading} {...props}/>} />
+           <Route path = {`${match.path}/:collectionsId`}  render ={ props => <CollectionPageOverView isLoading = {loading} {...props}/>}/>
         </div>
     )
     }

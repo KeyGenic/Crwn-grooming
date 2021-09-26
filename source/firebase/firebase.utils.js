@@ -51,17 +51,17 @@ const config = {
 
   export const convertCollectionSnapshotToMap = (collections) => {
     const transformCollection = collections.docs.map(doc => {
-      const {title,items} = doc.data();
+      const {title,items,} = doc.data();
 
       return {
-        routeName:encodeURI(title.toLowerCase()),
+        routeName:encodeURI(title),
         id:doc.id,
         title,
         items
       }
     })
-    transformCollection.reduce((acc,collection) => {
-      acc[collection.title.toLowerCase()] = collection
+    return transformCollection.reduce((acc,collection) => {
+      acc[collection.title] = collection
       return acc
     },{})
   }

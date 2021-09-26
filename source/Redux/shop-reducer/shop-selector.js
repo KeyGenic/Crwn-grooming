@@ -15,5 +15,5 @@ export const getCollectionOverview = createSelector(
 
 export const getCollectionsId = urlParam => createSelector(
     getShopData,
-    collections => collections[urlParam]
+    collections => collections? collections[urlParam] : null
 )

@@ -6,7 +6,6 @@ import { createStructuredSelector } from 'reselect';
 import { getCollectionOverview } from '../../Redux/shop-reducer/shop-selector';
 
 const CollectionsOverview = ({collections}) => {
-    console.log(collections)
          return(
             <div className ="collections-container">
                 <h1 style = {{

@@ -1,4 +1,12 @@
-.collections-overview {
+.collections-container {
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width:800px) {
+  .collections-container{
+    h1{
+      text-align: center;
+    }
+  }
 }

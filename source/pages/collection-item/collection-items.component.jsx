@@ -21,7 +21,7 @@ const CollectionItems = ({items,addItems}) => {
           <span className ="price">{price}</span>
       </div>    
         }
-           <CustomBtn child = "Add to Cart" onClick = {() => addItems(items)} Isinverted />
+           <CustomBtn  className = 'custom-btn' child = "Add to Cart" onClick = {() => addItems(items)} Isinverted />
         </div>
     )
 }

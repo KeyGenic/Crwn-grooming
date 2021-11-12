@@ -15,6 +15,7 @@ const config = {
   firebase.initializeApp(config)
 
 
+
   export const userProfileDoc = async (userAuth,additonalData) => {
     if(!userAuth) return;
     const userReference = fireStore.doc(`users/${userAuth.uid}`)

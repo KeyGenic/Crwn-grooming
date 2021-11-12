@@ -4,7 +4,7 @@ const INITIAL_STATE =  {
             title: 'Shampoos',
             img: 'https://manilla.lt/img/cms/hair%20shampoo.jpg',
             id:1,
-            linkurl : 'shop/shampoos'
+            linkurl : 'shop/Shampoos'
         },
         {
             title: 'Shower Gels',
@@ -34,7 +34,7 @@ const INITIAL_STATE =  {
             title: 'Bar Soaps',
             img:"https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1579902150-bar-soap-for-men-10-1579902145.jpg",
             id:6,
-            linkurl : 'shop/BarSoap'
+            linkurl : 'shop/BarSoaps'
         }
     ]
 }
